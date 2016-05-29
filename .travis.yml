@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  - IMAGE=hastec
+
+script:
+  - docker build -t $IMAGE .
+  - docker run $IMAGE hastec --version
