@@ -1,6 +1,7 @@
 # Docker Image for [Haste Compiler][haste]
 
 [![docker-badge](http://dockeri.co/image/rwstauner/haste-compiler)](https://hub.docker.com/r/rwstauner/haste-compiler)
+[![Build Status](https://travis-ci.org/rwstauner/docker-haste-compiler.svg?branch=master)](https://travis-ci.org/rwstauner/docker-haste-compiler)
 
 ## Setup
 
