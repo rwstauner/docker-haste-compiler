@@ -1,4 +1,4 @@
-FROM haskell:latest
+FROM haskell:7
 MAINTAINER Randy Stauner <randy@magnificent-tears.com>
 
 RUN mkdir -p /src
