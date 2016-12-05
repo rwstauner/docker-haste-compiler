@@ -1,16 +1,15 @@
-FROM haskell:7
+FROM haskell:7.10
 MAINTAINER Randy Stauner <randy@magnificent-tears.com>
 
 RUN mkdir -p /src
 WORKDIR /src
 
-RUN  apt-get update \
-  && apt-get install -y \
-    libbz2-dev \
-  && rm -rf /var/lib/apt/lists/*
+# http://haste-lang.org/downloads/
 
-RUN  cabal update \
-  && cabal install haste-compiler \
-  && haste-boot
+# The "cabal install" used to work, but dependencies (and/or haste-boot) now
+# fails, and it's an old version anyway, so use the pre-built package.
+
+ADD http://haste-lang.org/downloads/ghc-7.10/haste-compiler_0.5.5.1_amd64.deb /tmp/haste.deb
+RUN dpkg -i /tmp/haste.deb
 
 # Default command for haskell is "ghci" which makes as much sense as anything.
